@@ -31,8 +31,12 @@ def health_check():
 @app.route('/api', methods=['POST'])
 def send_data():
     try:
-        # Get data from the request body
-        data = request.json
+        user = request.args.get('user')
+        age = request.args.get('age')
+        data = {
+            "user": user,
+            "age": age
+        }
         # Send a POST request to the backend service with the data
         response = requests.post(BACKEND_URL, json=data)
         # Check if the request was successful
