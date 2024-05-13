@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 import requests
 import os 
 
@@ -38,6 +38,9 @@ def send_data():
             "age": age
         }
         # Send a POST request to the backend service with the data
+        print("THIS IS A TEST PRINT")
+        print(user)
+        print(age)
         response = requests.post(BACKEND_URL, json=data)
         # Check if the request was successful
         if response.status_code == 200:

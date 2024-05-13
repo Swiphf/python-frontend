@@ -10,6 +10,4 @@ COPY . .
 
 EXPOSE 5000
 
-ENV BACKEND_URL=http://backend-service-url/api
-
 CMD ["python", "app.py"]
